@@ -1,4 +1,3 @@
-
 // hero section animation
 const headerImg = document.getElementById("headerImg");
 const bannerImg = [
@@ -9,7 +8,6 @@ const bannerImg = [
 
 let i = 0;
 const slider = () => {
-  console.log(i);
   if (i > bannerImg.length-1) {
     i = 0;
   }
@@ -17,8 +15,27 @@ const slider = () => {
   i++;
 
   setTimeout(() => {
-    console.log("called");
     slider();
   }, 3000);
 };
 
+
+// showcase section products filtering with the click of different buttons
+
+const btns = document.querySelectorAll('.btns .btn');
+const cards = document.querySelectorAll('.card');
+
+const filterCard = (e) => {
+  document.querySelector('.active').classList.remove('active');
+  e.target.classList.add('active');
+
+  cards.forEach(card => {
+    card.classList.add("hide")
+    console.log(card.dataset.name,e.target.dataset.name)
+    if(card.dataset.name === e.target.dataset.name || e.target.dataset.name ==="all"){
+      card.classList.remove("hide");
+    }
+  })
+}
+
+btns.forEach(btn => btn.addEventListener('click',filterCard));

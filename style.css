@@ -1,10 +1,15 @@
+:root {
+    --theme-color: #ff7300;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
+header {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -63,20 +68,133 @@ header>.content {
 
 header>.content>h1 {
     font-size: 36px;
-
 }
 
-header > .content > button {
+header>.content>button {
     padding: 15px 30px;
-    background-color:#ff7300 ;
+    background-color: var(--theme-color);
     color: white;
-    border: 1px solid #ff7300;
+    border: 1px solid var(--theme-color);
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
-header > .content > button:hover {
+header>.content>button:hover {
     background-color: transparent;
-    border: 1px solid #ff7300 ;
+    border: 1px solid var(--theme-color);
+}
+
+
+main>* {
+    margin: 50px;
+}
+
+.showcase-section {
+    text-align: center;
+}
+
+.showcase-section>* {
+    padding: 10px 0px;
+}
+
+.showcase-section>.showcase-title {
+    font-size: 36px;
+}
+
+.showcase-section>.btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btns .btn {
+    padding: 10px 40px;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 50px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+
+.showcase-section .active {
+    background-color: var(--theme-color);
+    color: white;
+}
+
+.filterable-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.hide{
+    display: none;
+}
+
+.card {
+    flex-basis: 300px;
+    height: 300px;
+    padding: 10px;
+    box-shadow: 8px 8px 8px #ddd;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+    /* box-shadow: ; */
+}
+
+.card-body {
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: -60px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.del-price {
+    color: var(--theme-color);
+}
+
+.card-body>* {
+    margin: 10px 0px;
+}
+
+.card-body:hover {
+    transform: translateY(-50px);
+}
+
+.cart-btn {
+    padding: 10px 40px;
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    border-radius: 50px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.cart-btn:hover {
+    background: var(--theme-color);
+    color: white;
+
 }
