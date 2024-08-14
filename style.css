@@ -250,6 +250,70 @@ main>* {
     color: black;
 }
 
+
+
+
+
+
+.newsletter-section{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 100px 50px;
+    gap: 16px;
+    background-color: black;
+    color: white;
+}
+
+.newsletter-section > * {
+    width: 100%;
+}
+
+.newsletter-section > .newsletter-header >  h1 {
+    font-size: 36px;
+    max-width: 500px;
+   
+}
+
+.newsletter-section > .form > * {
+    margin: 10px 0px;
+}
+
+.newsletter-section > .form >.newsletter-form  {
+   display: flex;
+   gap: 16px;
+}
+
+.newsletter-section > .form >.newsletter-form > input[type="email"]{
+    padding: 10px;
+    flex: 1;
+    border: 1px solid gray;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.newsletter-section >.form > .newsletter-form > .subscribe-btn{
+    padding: 15px 30px;
+    background-color: var(--theme-color);
+    color: white;
+    border: 1px solid var(--theme-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.newsletter-section >.form> .newsletter-form > .subscribe-btn:hover{
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+}
+
+.newsletter-section >.form  > .privacy-desc> .privacy-link {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
 
     main>*{
@@ -257,5 +321,10 @@ main>* {
     }
     .about-us{
         flex-direction: column;
+    }
+    .newsletter-section{
+        flex-wrap: wrap;
+        padding: 20px;
+        gap: 16px;
     }
 }
