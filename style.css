@@ -9,6 +9,7 @@
     box-sizing: border-box;
 }
 
+/* header stying start here */
 header {
     position: relative;
     width: 100%;
@@ -84,12 +85,14 @@ header>.content>button:hover {
     background-color: transparent;
     border: 1px solid var(--theme-color);
 }
+/* header styling end here */
 
-
+/* giving space on every main section */
 main>* {
-    margin:100px 50px;
+    margin: 100px 50px;
 }
 
+/* showcase product section start here */
 .showcase-section {
     text-align: center;
 }
@@ -134,11 +137,12 @@ main>* {
     gap: 16px;
 }
 
-.hide{
+/* when clicking on any category. other item will be hibe */
+.hide {
     display: none;
 }
 
-.card {
+.filterable-cards>.card {
     flex-basis: 300px;
     height: 300px;
     padding: 10px;
@@ -149,7 +153,7 @@ main>* {
     cursor: pointer;
 }
 
-.card img {
+.filterable-cards>.card img {
     width: 100%;
     height: 210px;
     object-fit: cover;
@@ -158,7 +162,7 @@ main>* {
     /* box-shadow: ; */
 }
 
-.card-body {
+.filterable-cards>.card>.card-body {
     text-align: center;
     padding: 10px;
     background-color: white;
@@ -180,13 +184,15 @@ main>* {
     margin: 10px 0px;
 }
 
-.card:hover .card-body {
+.filterable-cards>.card:hover .card-body {
     transform: translateY(-50px);
 }
-.card:hover img{
+
+.filterable-cards>.card:hover img {
     transform: rotate(10deg) scale(1.5);
     /* transform: scale(1.5); */
 }
+
 .cart-btn {
     padding: 10px 40px;
     background-color: transparent;
@@ -203,37 +209,39 @@ main>* {
     color: white;
 
 }
+/* showcase product section end here */
 
 
+/* about us styling start here */
 .about-us {
     display: flex;
     align-items: center;
     justify-content: space-between;
-     gap: 16px;
+    gap: 16px;
 }
 
-.about-us > *{ 
+.about-us>* {
     width: 100%;
 }
 
-.about-us > .about-banner > img {
+.about-us>.about-banner>img {
     width: 100%;
 }
 
-.about-us > .about-content > *{
-    margin:10px 0px;
+.about-us>.about-content>* {
+    margin: 10px 0px;
 }
 
-.about-us > .about-content > .about-header { 
+.about-us>.about-content>.about-header {
     font-size: 36px;
     text-transform: uppercase;
 }
 
-.about-us > .about-content > .about-desc {
+.about-us>.about-content>.about-desc {
     max-width: 500px;
 }
 
-.about-us > .about-content > button{
+.about-us>.about-content>button {
     padding: 15px 30px;
     background-color: var(--theme-color);
     color: white;
@@ -244,18 +252,133 @@ main>* {
     font-weight: bold;
 }
 
-.about-us > .about-content > button:hover{
+.about-us>.about-content>button:hover {
     background-color: transparent;
     border: 1px solid var(--theme-color);
     color: black;
 }
+/* about us styling end here */
+
+
+/* customer review styling start here */
+.customer-review > * {
+margin: 50px 0px;
+}
+
+.customer-review > h1{
+    font-size: 36px;
+    text-align: center;
+
+}
+
+.wrapper {
+    /* width: 100%; */
+    /* max-width: 1100px; */
+    position: relative;
+    /* margin: 50px auto; */
+}
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 16px;
+    grid-auto-columns: calc((100%/3) - 12px);
+    overflow: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: 0;
+}
+
+.wrapper i {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    /* color: white; */
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 6px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+}
+
+.wrapper i:first-child {
+    left: -20px;
+}
+
+.wrapper i:last-child {
+    right: -20px;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel .card {
+    height: 400px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px;
+    scroll-snap-align: start;
+}
+.carousel.no-transition{
+    scroll-behavior: auto;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.card .img {
+    width: 150px;
+    height: 150px;
+    background-color: var(--theme-color);
+    border-radius: 50%;
+    text-align: start;
+}
+
+.card .img img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+
+}
+
+.card h1 {
+    font-weight: bold;
+    font-size: 36px;
+    margin: 30px 0px 5px;
+}
+
+/* customer review styling end here */
 
 
 
-
-
-
-.newsletter-section{
+/* newsletter styling start here */
+.newsletter-section {
     display: flex;
     align-items: start;
     justify-content: space-between;
@@ -265,26 +388,26 @@ main>* {
     color: white;
 }
 
-.newsletter-section > * {
+.newsletter-section>* {
     width: 100%;
 }
 
-.newsletter-section > .newsletter-header >  h1 {
+.newsletter-section>.newsletter-header>h1 {
     font-size: 36px;
     max-width: 500px;
-   
+
 }
 
-.newsletter-section > .form > * {
+.newsletter-section>.form>* {
     margin: 10px 0px;
 }
 
-.newsletter-section > .form >.newsletter-form  {
-   display: flex;
-   gap: 16px;
+.newsletter-section>.form>.newsletter-form {
+    display: flex;
+    gap: 16px;
 }
 
-.newsletter-section > .form >.newsletter-form > input[type="email"]{
+.newsletter-section>.form>.newsletter-form>input[type="email"] {
     padding: 10px;
     flex: 1;
     border: 1px solid gray;
@@ -292,7 +415,7 @@ main>* {
     border-radius: 10px;
 }
 
-.newsletter-section >.form > .newsletter-form > .subscribe-btn{
+.newsletter-section>.form>.newsletter-form>.subscribe-btn {
     padding: 15px 30px;
     background-color: var(--theme-color);
     color: white;
@@ -303,26 +426,49 @@ main>* {
     font-weight: bold;
 }
 
-.newsletter-section >.form> .newsletter-form > .subscribe-btn:hover{
+.newsletter-section>.form>.newsletter-form>.subscribe-btn:hover {
     background-color: transparent;
     border: 1px solid var(--theme-color);
 }
 
-.newsletter-section >.form  > .privacy-desc> .privacy-link {
+.newsletter-section>.form>.privacy-desc>.privacy-link {
     color: white;
     font-weight: bold;
     text-decoration: none;
+    border-bottom: 1px solid var(--theme-color);
 }
+/* newsletter styling end here */
 
-@media screen and (max-width: 768px) {
 
-    main>*{
+/* media query for tablet */
+@media screen and (max-width:900px) {
+    main>* {
         margin: 100px 20px;
     }
-    .about-us{
+
+    .wrapper .carousel {
+        grid-auto-columns: calc((100%/2) - 9px);
+
+    }
+}
+
+/* media query for mobile */
+@media screen and (max-width: 768px) {
+
+    main>* {
+        margin: 100px 20px;
+    }
+
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+
+    }
+
+    .about-us {
         flex-direction: column;
     }
-    .newsletter-section{
+
+    .newsletter-section {
         flex-wrap: wrap;
         padding: 20px;
         gap: 16px;
