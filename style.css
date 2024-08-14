@@ -87,7 +87,7 @@ header>.content>button:hover {
 
 
 main>* {
-    margin: 50px;
+    margin:100px 50px;
 }
 
 .showcase-section {
@@ -154,6 +154,7 @@ main>* {
     height: 210px;
     object-fit: cover;
     border-radius: 10px 10px 0px 0px;
+    transition: all 0.3s ease-in-out;
     /* box-shadow: ; */
 }
 
@@ -164,6 +165,7 @@ main>* {
     transition: all 0.3s ease;
     position: absolute;
     bottom: -60px;
+    left: 0;
 }
 
 .price {
@@ -178,10 +180,13 @@ main>* {
     margin: 10px 0px;
 }
 
-.card-body:hover {
+.card:hover .card-body {
     transform: translateY(-50px);
 }
-
+.card:hover img{
+    transform: rotate(10deg) scale(1.5);
+    /* transform: scale(1.5); */
+}
 .cart-btn {
     padding: 10px 40px;
     background-color: transparent;
@@ -197,4 +202,60 @@ main>* {
     background: var(--theme-color);
     color: white;
 
+}
+
+
+.about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     gap: 16px;
+}
+
+.about-us > *{ 
+    width: 100%;
+}
+
+.about-us > .about-banner > img {
+    width: 100%;
+}
+
+.about-us > .about-content > *{
+    margin:10px 0px;
+}
+
+.about-us > .about-content > .about-header { 
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.about-us > .about-content > .about-desc {
+    max-width: 500px;
+}
+
+.about-us > .about-content > button{
+    padding: 15px 30px;
+    background-color: var(--theme-color);
+    color: white;
+    border: 1px solid var(--theme-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.about-us > .about-content > button:hover{
+    background-color: transparent;
+    border: 1px solid var(--theme-color);
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+
+    main>*{
+        margin: 100px 20px;
+    }
+    .about-us{
+        flex-direction: column;
+    }
 }
